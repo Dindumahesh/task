@@ -1,30 +1,12 @@
-# Bitwise Operators Program
-a = int(input("Enter first number: "))
-b = int(input("Enter second number: "))
+# Convert Binary to Decimal
 
-# AND
-print("AND (&) =", a & b)
+binary = input("Enter a binary number: ")
 
-# OR
-print("OR (|) =", a | b)
+decimal = 0
+power = 0
 
-# XOR
-print("XOR (^) =", a ^ b)
+for digit in binary[::-1]:
+    decimal += int(digit) * (2 ** power)
+    power += 1
 
-# XOR for same values
-print("XOR of same values =", a ^ a)
-
-# Check if 1 is Even or Odd
-if (1 & 1) == 1:
-    print("1 is Odd")
-else:
-    print("1 is Even")
-
-# NOT
-print("NOT (~a) =", ~a)
-
-# Left Shift
-print("Left Shift (a << 1) =", a << 1)
-
-# Right Shift
-print("Right Shift (a >> 1) =", a >> 1)
+print("Decimal =", decimal)
